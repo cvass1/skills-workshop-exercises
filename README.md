@@ -31,3 +31,45 @@ A simple tool that will tell you whether a year is a leap year, according to the
 - Write a program that takes a start year and an end year and returns an array of all the leap years between.
 
 - Write a program that when given a year, will return the closest leap year (this could be before or after the given year)
+
+# Get the Middle Letter(s)
+
+## Requirements
+
+- The program runs in a REPL like `irb` or in a browser console.
+
+- It's fine to use Ruby or JavaScript.
+
+- Your job is to return the middle letter of a word. If the word's length is odd, return the middle letter. If the word's length is even, return the middle 2 letters.
+
+#### Acceptance Criteria
+
+```ruby
+get_middle("test") # => "es"
+get_middle("testing") # => "t"
+get_middle("middle") # => "dd"
+get_middle("A") # => "A"
+get_middle("of") # => "of"
+```
+
+## Take a ten minute walk
+
+Create a function that will return true if the walk will take you exactly ten minutes and will return you to your starting point.
+
+### Requirements
+
+You are meeting a friend in New York City, where all roads are laid out in a perfect grid. You arrived ten minutes too early to the appointment, so you decided to take the opportunity to go for a short walk.<br>
+The city provides its tourists with a Walk Generating App on their phones -- every time you press the button it sends you an array of one-letter strings representing directions to walk. **e.g. ['n', 's', 'w', 'e']**
+
+You always walk one block at a time in a direction and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.
+
+_Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!)._
+
+#### Acceptance Criteria
+
+```ruby
+ten_minute_walk?(['w', 's', 'e', 'e', 'n', 'n', 'e', 's', 'w', 'w']) # => true
+ten_minute_walk?(['w', 's', 'e', 'n', 'n', 'e', 's', 'w', 'w', 'w']) # => false
+ten_minute_walk?(['w', 's', 'e', 's', 's', 'e', 's', 'w', 'n', 'n']) # => false
+ten_minute_walk?(['w', 's']) # => false
+```
