@@ -18,9 +18,11 @@ def closest_leap_year(year)
     break if leap_year?(year-backward_counter)
     backward_counter += 1
   end
+  
   if backward_counter < forward_counter
     year - backward_counter
   else
     year + forward_counter
   end
 end
+
