@@ -7,22 +7,12 @@ def leap_years(start_year, end_year)
 end
 
 def closest_leap_year(year)
-  forward_counter = 0
-  backward_counter = 0
-  while true
-    break if leap_year?(year+forward_counter)
-    forward_counter += 1
-  end
-
-  while true
-    break if leap_year?(year-backward_counter)
-    backward_counter += 1
-  end
-  
-  if backward_counter < forward_counter
-    year - backward_counter
-  else
-    year + forward_counter
+  counter = 0
+  loop do
+    if leap_year?(year+counter) || leap_year?(year-counter)
+      return leap_year?(year+counter) ? year+counter : year-counter
+    end
+    counter += 1
   end
 end
 
