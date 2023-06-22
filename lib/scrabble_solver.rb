@@ -4,18 +4,17 @@ class Scrabble
   end
 
   def score
-    return 0 if @word == nil
-    return 0 unless @word.index( /[^[:alnum:]]/ ) == nil
-    @word.chars.map { |letter|
-      get_letter_score(letter.downcase())
-    }.sum
+    return 0 if @word.nil? || @word.match?(/[^[:alnum:]]/)
+    @word.downcase.chars.sum { |letter|
+      get_letter_score(letter)
+    }
   end
 
   def get_letter_score(letter)
     case letter
     when 'a', 'e', 'i', 'o', 'u', 'l', 'n', 'r', 's', 't'
       1
-    when 'd','g'
+    when 'd', 'g'
       2
     when 'b', 'c', 'm', 'p'
       3
@@ -27,9 +26,8 @@ class Scrabble
       8
     when 'q', 'z'
       10
-    else 
+    else
       0
     end
   end
-
 end
