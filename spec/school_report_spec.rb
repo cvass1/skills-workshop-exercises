@@ -48,6 +48,8 @@ describe '#report' do
       result = report("Green, Green, Amber, Red, Red, Red")
       expect(result).to eq "Green: 2\nAmber: 1\nRed: 3"
     end
+  end
+  context 'it handles missing spaces and non-caplitalised letters' do
     it 'returns "Green: 2\nAmber: 1\nRed: 3" even when missing spaces' do
       result = report("Green, Green,Amber,Red, Red, Red")
       expect(result).to eq "Green: 2\nAmber: 1\nRed: 3"
